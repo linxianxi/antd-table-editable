@@ -1,0 +1,67 @@
+
+.ant-table.ant-table-small .ant-table-tbody tr.ant-table-row > td {
+    // min-height（td 设置 min-height 不起作用，但是 td 的 height 相当于 min-height）
+    // 41px 正好是 antd size='small' 的表单控件在格子里的格子的高度，这样模式切换时布局不会抖动
+    height: 41px;
+}
+
+.ant-table-cell {
+    // 选中表格的样式
+    &-selected::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        border: 2px solid #1677FF;
+    }
+
+    .cell-icon {
+        display: none;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: white;
+        border: 1px solid #c9c9c9;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+    }
+
+    .cell-iconLeft {
+        display: none;
+        position: absolute;
+        z-index: 1;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: white;
+        border: 1px solid #c9c9c9;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+    }
+
+    &:hover {
+        .cell-icon, .cell-iconLeft {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &:hover {
+                background: #f2f2f2;;
+            }
+        }
+    }
+
+    // 删除 InputNumber 编辑时的 padding
+    .cell-number-input {
+        input.ant-input-number-input {
+            padding-inline: 0 !important;
+          }
+    }
+}
+
+

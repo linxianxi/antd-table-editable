@@ -1,0 +1,38 @@
+{
+  "include": [
+    "src",
+    "tests",
+    ".dumirc.ts",
+    "*.ts",
+    "docs"
+  ],
+  "compilerOptions": {
+    "strict": true,
+    "declaration": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "target": "ES2015",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "types": [
+      "vitest/globals"
+    ],
+    "paths": {
+      "@@/*": [
+        ".dumi/tmp/*"
+      ],
+      "@/*": [
+        "src"
+      ],
+      "antd-table-editable": [
+        "src"
+      ],
+      "antd-table-editable/*": [
+        "src/*",
+        "*"
+      ]
+    }
+  }
+}

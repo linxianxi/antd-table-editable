@@ -1,0 +1,47 @@
+name: Release CI
+on:
+  push:
+    branches:
+      - master
+      - alpha
+      - beta
+      - rc
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install deps
+        run: npm install
+
+      - name: Test
+        run: npm run test
+
+  release:
+    needs: test
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install deps
+        run: npm install
+
+      - name: release
+        run: npm run release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
