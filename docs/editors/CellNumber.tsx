@@ -1,5 +1,5 @@
 import { EditOutlined } from '@ant-design/icons';
-import { App, InputNumber, InputNumberProps } from 'antd';
+import { InputNumber, InputNumberProps } from 'antd';
 import { CellEditorProps, useCellContext } from 'antd-table-editable';
 import clsx from 'clsx';
 import React from 'react';
@@ -9,7 +9,6 @@ interface CellNumberProps extends CellEditorProps {
 }
 
 const CellNumber: React.FC<CellNumberProps> = ({ value, render, fieldProps, cellProps }) => {
-  const { message } = App.useApp();
   const { mode, form, editable, setSelected, setMode } = useCellContext();
 
   let childrenNode: React.ReactNode;
