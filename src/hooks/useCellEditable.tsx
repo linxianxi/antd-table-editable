@@ -64,7 +64,7 @@ export default function useCellEditable<RecordType>({
   ) => {
     const node =
       mode === 'read' ? (
-        getReadCellContent(children, content)
+        getReadCellContent(children, content, prefixCls)
       ) : (
         <Form
           form={form}

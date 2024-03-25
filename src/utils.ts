@@ -24,14 +24,20 @@ export function getField(key?: ColumnType<any>['key'], dataIndex?: ColumnType<an
  * 这里也进行处理一下
  * https://github.com/react-component/table/blob/master/src/Cell/index.tsx#L233
  */
-export function getReadCellContent(children: React.ReactNode[], content: React.ReactNode) {
+export function getReadCellContent(
+  children: React.ReactNode[],
+  content: React.ReactNode,
+  prefixCls: string,
+) {
   /**
    * 取第一位，第 0 位是展开符，目前先不支持
    * https://github.com/react-component/table/blob/master/src/Cell/index.tsx#L254
    */
   const child = children[1];
-  if (React.isValidElement(child) && child.props.className?.includes('ant-table-cell-content')) {
-    const finalContent = (content as any)?.[1]?.props?.className?.includes('ant-table-cell-content')
+  if (React.isValidElement(child) && child.props.className?.includes(`${prefixCls}-cell-content`)) {
+    const finalContent = (content as any)?.[1]?.props?.className?.includes(
+      `${prefixCls}-cell-content`,
+    )
       ? (content as any)[1].props.children
       : content;
 
@@ -39,18 +45,4 @@ export function getReadCellContent(children: React.ReactNode[], content: React.R
   } else {
     return content;
   }
-}
-
-// 从 value 得到对应的文本
-export function getCascaderLabel(value?: (string | number)[], options?: Record<string, any>[]) {
-  return value
-    ?.reduce<Record<string, any>>((total, i, index) => {
-      const option = (index === 0 ? options : total[total.length - 1]?.children)?.find(
-        (op: Record<string, any>) => op.value === i,
-      );
-      total.push(option || i);
-      return total;
-    }, [])
-    .map((i: any) => i.label || i)
-    .join(' / ');
 }
