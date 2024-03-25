@@ -1,6 +1,6 @@
 import { EditOutlined } from '@ant-design/icons';
 import { App, Input, InputProps } from 'antd';
-import { CellEditorProps, PopoverValidator, useCellContext } from 'antd-editable-table';
+import { CellEditorProps, PopoverValidator, useCellContext } from 'antd-table-editable';
 import React from 'react';
 
 const PopoverValidatorInput: React.FC<InputProps> = (props) => (
