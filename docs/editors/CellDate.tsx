@@ -15,7 +15,7 @@ const CellDate: React.FC<CellDateProps> = ({ value, fieldProps, render, cellProp
   if (mode === 'read') {
     childrenNode = (
       <>
-        {dayjs(value).format('YYYY-MM-DD')}
+        {value ? dayjs(value).format('YYYY-MM-DD') : ''}
         {editable && mode === 'read' && (
           <div className="cell-icon" onClick={() => setMode('edit')}>
             <CaretDownOutlined />

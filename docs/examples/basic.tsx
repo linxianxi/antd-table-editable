@@ -72,7 +72,6 @@ export default () => {
             width: 200,
           },
         ]}
-        pagination={false}
         onSave={({ field, value, index }) => {
           setDataSource((prev) => {
             const result = [...prev];

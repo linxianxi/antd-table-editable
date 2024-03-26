@@ -7,12 +7,6 @@ order: 0
 nav: 快速上手
 ---
 
-### 说明
-
-1、底层使用 `components.body.cell` 实现，但你能继续使用 `components.body.cell` ，且不会覆盖编辑的功能。
-
-2、内部已经默认对 Cell 进行了 memo 处理，onSave 只会对单个 Cell 进行重渲染，但在以下这些情况需要注意：[性能优化](/zh-CN/guides/perf)
-
 ### Table
 
 | 参数             | 说明     | 类型                                                                                         |
@@ -20,9 +14,7 @@ nav: 快速上手
 | editorComponents | 编辑控件 | Record<string, React.FunctionComponent\<any>>                                                |
 | onSave           | 保存回调 | (info: { field: string; value: any; record: any; index: number; valueType: string }) => void |
 
-### Columns
-
-在格子被选中时，会向格子添加 `ant-table-cell-selected` class，可自行对其设置样式
+### Column
 
 | 参数           | 说明                | 类型                                                                 |
 | -------------- | ------------------- | -------------------------------------------------------------------- |

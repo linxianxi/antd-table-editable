@@ -6,7 +6,7 @@ import CellDate from '../editors/CellDate';
 import CellInput from '../editors/CellInput';
 import CellNumber from '../editors/CellNumber';
 import CellSingle from '../editors/CellSingle';
-import './components.scss';
+import './add-icon.scss';
 
 const data = new Array(10).fill(null).map((_, index) => ({
   id: index,
@@ -92,7 +92,6 @@ export default () => {
             width: 200,
           },
         ]}
-        pagination={false}
         onSave={({ field, value, index }) => {
           setDataSource((prev) => {
             const result = [...prev];

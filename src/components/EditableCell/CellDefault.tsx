@@ -6,21 +6,14 @@ interface CellDefaultProps<RecordType> extends EditableOnCellProps<RecordType> {
 }
 
 export default function CellDefault<RecordType>({
-  children,
   cellComponent: CellComponent,
   ...restProps
 }: CellDefaultProps<RecordType>) {
-  const { cellProps, render } = useCellEditable({
-    children,
+  const { cellProps } = useCellEditable({
     ...restProps,
     cellComponent: CellComponent,
     editable: false,
   });
 
-  // 没有 record 说明是表格的空状态或选择框列
-  if (!restProps.record) {
-    return <CellComponent {...restProps}>{children}</CellComponent>;
-  }
-
-  return <CellComponent {...cellProps}>{render(children)}</CellComponent>;
+  return <CellComponent {...cellProps} />;
 }
