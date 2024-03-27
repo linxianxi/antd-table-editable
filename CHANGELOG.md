@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/linxianxi/antd-table-editable/compare/v1.1.2...v1.1.3) (2024-03-27)
+
+
+### Bug Fixes
+
+* use ConfigProvider prefixCls ([63071c8](https://github.com/linxianxi/antd-table-editable/commit/63071c863b3711fbc757ad6364bcff150ea28fb4))
+
 ## [1.1.2](https://github.com/linxianxi/antd-table-editable/compare/v1.1.1...v1.1.2) (2024-03-26)
 
 
