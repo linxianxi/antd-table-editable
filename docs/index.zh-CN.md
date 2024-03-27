@@ -1,7 +1,7 @@
 ---
 hero:
   title: antd-table-editable
-  description: 基础 antd Table 的单个格子的可编辑表格
+  description: 基础 antd Table 的可编辑表格
   actions:
     - text: 快速上手
       link: /guides/api

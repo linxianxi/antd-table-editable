@@ -23,7 +23,7 @@ const CellNumber: React.FC<CellNumberProps> = ({ value, render, fieldProps, cell
         )}
       </>
     );
-  } else if (mode === 'edit') {
+  } else {
     childrenNode = (
       <InputNumber
         size="small"

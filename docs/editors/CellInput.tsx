@@ -29,7 +29,7 @@ const CellInput: React.FC<CellInputProps> = ({ value, render, fieldProps, cellPr
         )}
       </>
     );
-  } else if (mode === 'edit') {
+  } else {
     childrenNode = (
       <PopoverValidatorInput
         size="small"

@@ -3,8 +3,7 @@
 <div align="center">
 
 <h1>antd-table-editable</h1>
-
-A React component that allows you to select elements in the drag area using the mouse
+A editable table based on antd table
 
 [Changelog](./CHANGELOG.md) · [Report Bug][issues-url] · [Request Feature][issues-url]
 
