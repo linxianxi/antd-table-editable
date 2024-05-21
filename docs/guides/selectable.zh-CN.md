@@ -6,6 +6,6 @@ group:
 order: 2
 ---
 
-### 结合 `react-selectable-fast` 实现框选及右键功能
+### 结合 `react-selectable-box` 实现框选及右键功能
 
 <code src="../examples/selectable.tsx"></code>
