@@ -28,7 +28,7 @@ export default function useEditableColumns<RecordType, EditorType>({
     ...col,
     onCell: (record: RecordType, idx: number | undefined) => {
       const index = idx as number;
-      let value = col.dataIndex ? get(record, col.dataIndex) : undefined;
+      let value = col.dataIndex ? get(record, col.dataIndex as any) : undefined;
       const editable =
         typeof col.editable === 'function' ? col.editable(value, record, index) : col.editable;
       const field = getField(col.key, col.dataIndex);

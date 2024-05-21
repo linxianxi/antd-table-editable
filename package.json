@@ -84,7 +84,7 @@
     "@umijs/lint": "^4",
     "@vitest/coverage-v8": "latest",
     "ahooks": "^3.7.10",
-    "antd": "^5.15.2",
+    "antd": "^5.17.3",
     "commitlint": "^17",
     "concurrently": "^7",
     "cross-env": "^7",
