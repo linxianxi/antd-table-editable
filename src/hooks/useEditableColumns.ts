@@ -1,3 +1,4 @@
+import { ColumnsType } from 'antd/lib/table';
 import get from 'lodash/get';
 import { useEvent } from 'rc-util';
 import { EditableColumn, EditableOnCellProps, SaveInfoType } from '../interface';
@@ -11,7 +12,7 @@ export default function useEditableColumns<RecordType, EditorType>({
   columns?: EditableColumn<RecordType, EditorType>[];
   dataSource?: RecordType[];
   onSave?: (info: SaveInfoType<RecordType, EditorType>) => void;
-}) {
+}): ColumnsType<RecordType> | undefined {
   // 保持引用不变，可以 memo
   const handleSave = useEvent((info: Omit<SaveInfoType<RecordType, EditorType>, 'record'>) => {
     if (onSave) {
